@@ -1,0 +1,69 @@
+{{ define "main" }}
+<div class="td-content">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
+    <header class="article-meta">
+        {{ partial "taxonomy_terms_article_wrapper.html" . -}}
+        {{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) -}}
+        {{ partial "reading-time.html" . -}}
+        {{ end -}}
+    </header>
+    {{ .Render "td-content-after-header" -}}
+    {{ .Content }}
+    <div class="section-index">
+        {{ $page := .Page -}}
+        {{ $pages := (where .Site.Pages "Section" .Section).ByWeight -}}
+        {{ $pages = (where $pages "Type" "!=" "search") }}
+        {{ $pages = (where $pages ".Params.hide_summary" "!=" true) -}}
+        {{ $pages = (where $pages ".Parent" "!=" nil) -}}
+        {{ $pages = (where $pages ".Parent.File" "!=" nil) -}}
+        {{ if $page.File -}}
+        {{ $pages = (where $pages "Parent.File.UniqueID" "==" $page.File.UniqueID) -}}
+        {{ end -}}
+        {{ if or $page.Params.no_list (eq (len $pages) 0) -}}
+        {{/* If no_list is true or we don't have subpages we don't show a list of subpages */}}
+        {{ else if $page.Params.simple_list -}}
+        {{/* If simple_list is true we show a bulleted list of subpages */}}
+        <ul>
+            {{ range $pages -}}
+            {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params
+            "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) }}
+            <li><a href="{{ $manualLink }}" {{ with .Params.manualLinkTitle }} title="{{ . }}" {{ end }}{{ with
+                    .Params.manualLinkTarget }} target="{{ . }}" {{ if eq . "_blank" }} rel="noopener" {{ end }}{{ end
+                    }}>{{- .Title -}}</a></li>
+            {{ end -}}
+        </ul>
+        {{ else -}}
+        {{/* Otherwise we show a nice formatted list of subpages with page descriptions */}}
+        <hr class="panel-line">
+        {{ range $pages -}}
+        {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref")
+        (relref . .Params.manualLinkRelref) .RelPermalink) -}}
+        <div class="entry row">
+            <div class="col-sm-auto">
+                {{ with .Params.location }}
+                <img
+                    src="https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/pin-s+000({{ .longitude }},{{ .latitude }})/{{ .longitude }},{{ .latitude }},8/200x200?access_token={{ site.Params.mapboxToken}}" />
+                {{ end }}
+            </div>
+            <div class="col">
+                <h5>
+                    <a href="{{ $manualLink }}" {{ with .Params.manualLinkTitle }} title="{{ . }}" {{ end }}{{ with
+                        .Params.manualLinkTarget }} target="{{ . }}" {{ if eq . "_blank" }} rel="noopener" {{ end }}{{
+                        end }}>{{- .Title -}}</a>
+                </h5>
+                <p>{{ .Params.location.name }}</p>
+                <p>{{ .Description | markdownify -}}</p>
+            </div>
+        </div>
+        {{ end -}}
+        {{ end -}}
+    </div>
+    {{ partial "feedback.html" . -}}
+    {{ if (.Site.Config.Services.Disqus.Shortname) -}}
+    <br />
+    {{- partial "disqus-comment.html" . -}}
+    {{ end -}}
+    {{ partial "page-meta-lastmod.html" . -}}
+</div>
+{{ end -}}
