@@ -83,28 +83,6 @@ Neighborhood relay filling gaps toward the state line and Bristol Motor Speedway
 {{% /blocks/section %}}
 
 
-{{% blocks/section type="row" title="Resources" %}}
-{{% blocks/feature icon="fa-map" title="Live Map" url="/map/" %}}
-Current community nodes, gateways, and test beacons.
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="fa-calendar" title="Events & Builds" url="/events/" %}}
-Work nights, demos, and field tests—beginners welcome.
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="fa-blog" title="Latest Updates" url="/blog/" %}}
-Announcements, range studies, antenna experiments, and release notes.
-{{% /blocks/feature %}}
-{{% /blocks/section %}}
-
-{{% blocks/section color="info" %}}
-
-<div class="text-center">
-  <h2 class="h2">Want to host a node?</h2>
-  <p class="mb-3">We’ll help with hardware recommendations, mounting, and power—urban, suburban, or ridge‑top.</p>
-  <a class="btn btn-lg btn-primary" href="/nodes/host/">Host a Node <i class="fas fa-hand-holding-heart ms-2"></i></a>
-</div>
-{{% /blocks/section %}}
 
 {{% blocks/section %}}
 
