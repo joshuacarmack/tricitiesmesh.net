@@ -53,27 +53,28 @@ Neighborhood relay filling gaps toward the state line and Bristol Motor Speedway
 
 {{% /blocks/section %}}
 
-{{% blocks/section title="How it works" type="row" %}}
+
+{{% blocks/section title="How it works" %}}
 <div class="row text-center">
-  <div class="col-md-3">
+  <div class="col-12 col-sm-6 col-md-3 mb-4">
     <i class="fas fa-plug fa-2x mb-2"></i>
     <h4>1. Pick a radio</h4>
     <p>Choose a supported LoRa device (TTGO, LilyGO, RAK, etc.).</p>
     <a href="/docs/hardware/">Read more</a>
   </div>
-  <div class="col-md-3">
+  <div class="col-12 col-sm-6 col-md-3 mb-4">
     <i class="fas fa-wifi fa-2x mb-2"></i>
     <h4>2. Flash &amp; configure</h4>
     <p>Install Meshtastic, set region, channel, and power. We have presets for Tri-Cities.</p>
     <a href="/docs/firmware/">Read more</a>
   </div>
-  <div class="col-md-3">
+  <div class="col-12 col-sm-6 col-md-3 mb-4">
     <i class="fas fa-signal fa-2x mb-2"></i>
     <h4>3. Place your node</h4>
     <p>Elevate the antenna, avoid metal, and aim for clear line-of-sight.</p>
     <a href="/docs/antennas/">Read more</a>
   </div>
-  <div class="col-md-3">
+  <div class="col-12 col-sm-6 col-md-3 mb-4">
     <i class="fas fa-comment-dots fa-2x mb-2"></i>
     <h4>4. Chat &amp; test</h4>
     <p>Use the phone/desktop app, share packets, and post range results.</p>
@@ -81,6 +82,7 @@ Neighborhood relay filling gaps toward the state line and Bristol Motor Speedway
   </div>
 </div>
 {{% /blocks/section %}}
+
 
 
 
