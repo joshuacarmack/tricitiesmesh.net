@@ -1,77 +1,114 @@
 ---
+
 title: Tri-Cities Mesh
+description: Meshtastic for the Tri‑Cities (Kingsport • Johnson City • Bristol)
 ---
 
-{{< blocks/cover title="Tri-Cities Meshtastic" image_anchor="top" height="full" >}}
-<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
-  Learn More <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-</a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/google/docsy-example">
-  Join <i class="fab fa-github ms-2 "></i>
-</a>
-<p class="lead mt-5">Spreading Meshtastic around the Tri-Cities (Kingsport, Johnson City, and Bristol TN)</p>
+{{< blocks/cover title="Tri‑Cities Meshtastic" image_anchor="top" height="full" >}} <a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/get-started/">
+Get Started <i class="fas fa-arrow-alt-circle-right ms-2"></i> </a> <a class="btn btn-lg btn-secondary me-3 mb-4" href="/join/">
+Join the Mesh <i class="fas fa-satellite-dish ms-2"></i> </a> <a class="btn btn-lg btn-info me-3 mb-4" href="/map/">
+Live Coverage Map <i class="fas fa-map ms-2"></i> </a>
+
+<p class="lead mt-5">Open, off‑grid LoRa mesh for the Tri‑Cities amateur‑radio & maker community. Simple radios, long range, no cell service required.</p>
 {{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
 
-
 {{% blocks/lead color="primary" %}}
-Goldydocs provides a single web UI providing visibility into porridge
-temperature, chair size, and bed softness metrics! You can even find out who's
-been eating **your** porridge.
-
-(Sadly, Goldydocs isn't a real project, but you can use this site as an example
-to create your own real websites with [Docsy](https://docsy.dev))
+**What is Meshtastic?** A community‑run, long‑range, low‑power messaging network built on LoRa. We help folks in the Tri‑Cities get radios set up, place community nodes, and learn best practices.
 {{% /blocks/lead %}}
 
-
-{{% blocks/section color="dark" type="row" %}}
-{{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
-The Goldydocs UI now shows chair size metrics by default.
-
-Please follow this space for updates!
+{{% blocks/section type="row" color="dark" %}}
+{{% blocks/feature icon="fa-satellite-dish" title="Coverage & Nodes" url="/map/" %}}
+See gateways and relay nodes across Kingsport, Johnson City, and Bristol. Planning line‑of‑sight or a new install? Start here.
 {{% /blocks/feature %}}
 
-
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% blocks/feature icon="fa-book" title="Docs & How‑Tos" url="/docs/" %}}
+Step‑by‑step guides for radios, firmware, antennas, and mount ideas—from a windowsill node to a hilltop relay.
 {{% /blocks/feature %}}
 
-
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/docsydocs" %}}
-For announcement of latest features etc.
+{{% blocks/feature icon="fa-users" title="Get Involved" url="/join/" %}}
+Hop in to ask questions, share range tests, and coordinate deployments. All skill levels welcome.
 {{% /blocks/feature %}}
-
-
 {{% /blocks/section %}}
 
+{{% blocks/section title="Prominent Nodes" %}}
 
-{{% blocks/section %}}
-This is the second section
-{.h1 .text-center}
-{{% /blocks/section %}}
-
+<p class="text-center mb-4">Key community nodes that anchor our coverage. Want yours listed? <a href="/nodes/submit/">Submit details</a>.</p>
 
 {{% blocks/section type="row" %}}
-
-{{% blocks/feature icon="fab fa-app-store-ios" title="Download **from AppStore**" %}}
-Get the Goldydocs app!
+{{% blocks/feature icon="fa-tower-broadcast" title="Downtown Kingsport Gateway" url="/nodes/kingsport-gateway/" %}}
+High‑elevation relay covering downtown and riverfront. Ideal first‑hop for handhelds.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
-    url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls)
-contributions workflow on **GitHub**. New users are always welcome!
+{{% blocks/feature icon="fa-mountain" title="Buffalo Mountain Relay" url="/nodes/buffalo-mountain/" %}}
+Wide‑area ridge‑top node improving JC south‑side and I‑26 corridor reach.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!"
-    url="https://twitter.com/GoHugoIO" %}}
-For announcement of latest features etc.
+{{% blocks/feature icon="fa-city" title="Bristol North Sector" url="/nodes/bristol-north/" %}}
+Neighborhood relay filling gaps toward the state line and Bristol Motor Speedway.
 {{% /blocks/feature %}}
+{{% /blocks/section %}}
+
+> *These are placeholders—swap with your actual node slugs/titles when ready.*
 
 {{% /blocks/section %}}
 
+{{% blocks/section title="How it works" type="row" %}}
+<div class="row text-center">
+  <div class="col-md-3">
+    <i class="fas fa-plug fa-2x mb-2"></i>
+    <h4>1. Pick a radio</h4>
+    <p>Choose a supported LoRa device (TTGO, LilyGO, RAK, etc.).</p>
+    <a href="/docs/hardware/">Read more</a>
+  </div>
+  <div class="col-md-3">
+    <i class="fas fa-wifi fa-2x mb-2"></i>
+    <h4>2. Flash &amp; configure</h4>
+    <p>Install Meshtastic, set region, channel, and power. We have presets for Tri-Cities.</p>
+    <a href="/docs/firmware/">Read more</a>
+  </div>
+  <div class="col-md-3">
+    <i class="fas fa-signal fa-2x mb-2"></i>
+    <h4>3. Place your node</h4>
+    <p>Elevate the antenna, avoid metal, and aim for clear line-of-sight.</p>
+    <a href="/docs/antennas/">Read more</a>
+  </div>
+  <div class="col-md-3">
+    <i class="fas fa-comment-dots fa-2x mb-2"></i>
+    <h4>4. Chat &amp; test</h4>
+    <p>Use the phone/desktop app, share packets, and post range results.</p>
+    <a href="/docs/apps/">Read more</a>
+  </div>
+</div>
+{{% /blocks/section %}}
+
+
+{{% blocks/section type="row" title="Resources" %}}
+{{% blocks/feature icon="fa-map" title="Live Map" url="/map/" %}}
+Current community nodes, gateways, and test beacons.
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-calendar" title="Events & Builds" url="/events/" %}}
+Work nights, demos, and field tests—beginners welcome.
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-blog" title="Latest Updates" url="/blog/" %}}
+Announcements, range studies, antenna experiments, and release notes.
+{{% /blocks/feature %}}
+{{% /blocks/section %}}
+
+{{% blocks/section color="info" %}}
+
+<div class="text-center">
+  <h2 class="h2">Want to host a node?</h2>
+  <p class="mb-3">We’ll help with hardware recommendations, mounting, and power—urban, suburban, or ridge‑top.</p>
+  <a class="btn btn-lg btn-primary" href="/nodes/host/">Host a Node <i class="fas fa-hand-holding-heart ms-2"></i></a>
+</div>
+{{% /blocks/section %}}
 
 {{% blocks/section %}}
-This is the another section
-{.h1 .text-center}
+
+<div class="text-center">
+  <p class="small opacity-75">Tri‑Cities Mesh is a volunteer community project. Meshtastic™ is a separate open‑source project.</p>
+</div>
 {{% /blocks/section %}}
