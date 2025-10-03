@@ -1,16 +1,15 @@
 ---
-date: 2018-10-06
-title: Easy documentation with Docsy
-linkTitle: Announcing Docsy
+date: 2025-10-03
+title: Installing a node on Bays Mountain
+linkTitle: Bays Mountain Node
 description: >
-  The Docsy Hugo theme lets project maintainers and contributors focus on content,
-  not on reinventing a website infrastructure from scratch
-author: Riona MacNamara ([@rionam](https://x.com/bepsays))
+  Our process of installing a node on top of Bays Mountain in Kingsport, TN.
+author: Joshua Carmack
 resources:
   - src: "**.{png,jpg}"
     title: "Image #:counter"
     params:
-      byline: "Photo: Riona MacNamara / CC-BY-CA"
+      byline: "Photo: Joshua Carmack"
 ---
 
 **This is a typical blog post that includes images.**
