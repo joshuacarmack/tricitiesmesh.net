@@ -1,35 +1,62 @@
 ---
 title: Getting Started
-description: What does your user need to know to try your project?
-categories: [Examples, Placeholders]
-tags: [test, docs]
+linkTitle: Getting Started
+description: First steps to join and use the Tri-Cities Mesh network.
 weight: 2
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+{{< blocks/cover title="Getting Started" image_anchor="top" height="min" >}}
+<a class="btn btn-lg btn-primary me-3 mb-4" href="https://meshtastic.org/docs/software/android">
+Download App <i class="fas fa-mobile-alt ms-2"></i> </a> 
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://flasher.meshtastic.org/">
+Flash Firmware <i class="fas fa-microchip ms-2"></i> </a> 
+<a class="btn btn-lg btn-info me-3 mb-4" href="/community/">
+Community <i class="fas fa-users ms-2"></i> </a>
+{{< /blocks/cover >}}
 
-Information in this section helps your user try your project themselves.
+---
 
-* What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.
+## Welcome
 
-* Introductory “Hello World” example, if appropriate. More complex tutorials should live in the Tutorials section.
+This page will help you take your first steps with **Tri-Cities Mesh**.  
+Whether you’re completely new or just looking to connect a new device, start here.
 
-Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.
+---
 
-## Prerequisites
+## What You’ll Need
 
-Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?
+- A Meshtastic-compatible device (such as a T-Beam or LoRa32 board).  
+- A smartphone (iOS or Android) with the [Meshtastic app](https://meshtastic.org/docs/software/android).  
+- A basic understanding of how to power and connect your device.
 
-## Installation
+---
 
-Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?
+## First Steps
 
-## Setup
+1. **Get a device**  
+   Purchase or build a LoRa node (see our recommended hardware list — coming soon).
 
-Is there any initial setup users need to do after installation to try your project?
+2. **Install the app**  
+   Download the Meshtastic app on your phone.
 
-## Try it out!
+3. **Flash the firmware**  
+   Use the official [Meshtastic firmware flasher](https://flasher.meshtastic.org/) to update your device.
 
-Can your users test their installation, for example by running a command or deploying a Hello World example?
+4. **Connect & Configure**  
+   Pair your node with the app and set your channel settings to match the Tri-Cities Mesh.
+
+5. **Join the Network**  
+   Power it on, and you’re now part of the mesh!  
+   Try sending a message or checking the map to see other connected nodes.
+
+---
+
+## Next Steps
+
+- Learn more about [how the mesh works](/docs/how-it-works/).  
+- Explore [ways to host a node](/docs/host-a-node/).  
+- Visit our [community page](/community/) to connect with other local operators.
+
+---
+
+🚀 That’s it—you’re up and running!

@@ -6,7 +6,7 @@ description: Meshtastic for the Tri‑Cities (Kingsport • Johnson City • Bri
 
 {{< blocks/cover title="Tri‑Cities Meshtastic" image_anchor="top" height="full" >}} <a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/get-started/">
 Get Started <i class="fas fa-arrow-alt-circle-right ms-2"></i> </a> <a class="btn btn-lg btn-secondary me-3 mb-4" href="/join/">
-Join the Mesh <i class="fas fa-satellite-dish ms-2"></i> </a> <a class="btn btn-lg btn-info me-3 mb-4" href="/map/">
+Join the Mesh <i class="fas fa-satellite-dish ms-2"></i> </a> <a class="btn btn-lg btn-info me-3 mb-4" href="https://meshtastic.n4jhc.com/">
 Live Coverage Map <i class="fas fa-map ms-2"></i> </a>
 
 <p class="lead mt-5">Open, off‑grid LoRa mesh for the Tri‑Cities amateur‑radio & maker community. Simple radios, long range, no cell service required.</p>
