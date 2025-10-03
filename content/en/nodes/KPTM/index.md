@@ -19,6 +19,8 @@ location:
   name: Kingsport, TN (Wilcox Dr)
   latitude: 36.53747
   longitude: -82.54736
+  agl: 1
+  altitude: 377
 ---
 Maintained by Joshua Carmack. Used for mapping purposes, runs this site plus multiple telemetry monitors.
 
