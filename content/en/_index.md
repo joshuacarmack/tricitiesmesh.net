@@ -4,7 +4,7 @@ description: Meshtastic for the Tri-Cities (Kingsport • Johnson City • Brist
 ---
 
 {{< blocks/cover title="Tri-Cities Meshtastic" image_anchor="top" height="full" >}}
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="/docs/get-started/">
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="/docs/getting-started/">
   Get Started <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-secondary me-3 mb-4" href="https://meshtastic.n4jhc.com/">
