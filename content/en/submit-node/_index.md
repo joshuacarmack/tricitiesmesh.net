@@ -8,6 +8,15 @@ menu: { main: { weight: 30 } }
 Help us grow the mesh! Share your node’s basics below.
 {{% /blocks/lead %}}
 
+<div class="mb-5" style="max-width:900px; margin:2rem auto 0 auto;">
+  <p class="alert alert-info">
+    <strong>Please note:</strong> Filling out this form does not guarantee your node will be featured.  
+    We only feature <em>permanent installs</em> that can be seen on the mesh and verified.  
+    If you would like to submit build instructions or share more detailed info, please email  
+    <a href="mailto:contact@tricitiesmesh.net">contact@tricitiesmesh.net</a>.
+  </p>
+</div>
+
 <div style="max-width:900px; margin:0 auto;">
 <form name="submit-node" method="POST" enctype="multipart/form-data"
       action="/api/submit-node"
