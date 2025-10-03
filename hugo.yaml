@@ -82,7 +82,7 @@ params:
     # set taxonomyPageHeader = [] to hide taxonomies on the page headers
     taxonomyPageHeader: [tags, categories]
 
-  privacy_policy: https://policies.google.com/privacy
+  privacy_policy: 
 
   # First one is picked as the Twitter card image if not set on page.
   # images: [images/project-illustration.png]
@@ -128,8 +128,8 @@ params:
   prism_syntax_highlighting: false
 
   copyright:
-    authors: Tri-Cities Mesh - Joshua Carmack |
-    from_year: 2025
+    authors: Tri-Cities Mesh | This site is not affiliated with or endorsed by the Meshtastic project.
+    from_year: 
 
   # User interface configuration
   ui:
