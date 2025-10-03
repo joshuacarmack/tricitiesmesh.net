@@ -61,7 +61,7 @@ description: Meshtastic for the Tri-Cities (Kingsport • Johnson City • Brist
 {{% /blocks/section %}}
 
 {{% blocks/section title="Prominent Nodes" %}}
-<p class="text-center mb-4">Key community nodes that anchor our coverage. Want yours listed? <a href="/nodes/submit/">Submit details</a>.</p>
+<p class="text-center mb-4">Key community nodes that anchor our coverage. Want yours listed? <a href="/submit-node/">Submit details</a>.</p>
 
 {{% blocks/section type="row" %}}
   {{% blocks/feature icon="fa-computer" title="Downtown Kingsport Gateway" url="/nodes/kptm/" %}}
