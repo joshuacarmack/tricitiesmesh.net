@@ -17,7 +17,7 @@
             <div class="card">
                 {{ with .Params.location }}
                 <img class="card-img-top"
-                    src="https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/pin-s+000({{ .longitude }},{{ .latitude }})/{{ .longitude }},{{ .latitude }},14/500x500?access_token={{ site.Params.mapboxToken}}" />
+                    src="https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/pin-s+000({{ .longitude }},{{ .latitude }})/{{ .longitude }},{{ .latitude }},12/500x500?access_token={{ site.Params.mapboxToken}}" />
                 {{ end }}
                 <ul class="list-group list-group-flush">
                     {{ with .Params.location }}
