@@ -1,0 +1,9 @@
+.get-involved a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.get-involved a:hover {
+  color: #ffd700;
+}

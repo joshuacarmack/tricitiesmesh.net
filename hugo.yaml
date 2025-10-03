@@ -191,6 +191,8 @@ params:
         url: https://example.org/mail
         icon: fa fa-envelope
         desc: Discuss development issues around the project
+  custom_css:
+    - css/custom.css
 
 module:
   # Uncomment the next line to build and serve using local docsy clone declared in the named Hugo workspace:
