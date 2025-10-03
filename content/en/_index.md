@@ -36,20 +36,19 @@ Hop in to ask questions, share range tests, and coordinate deployments. All skil
 <p class="text-center mb-4">Key community nodes that anchor our coverage. Want yours listed? <a href="/nodes/submit/">Submit details</a>.</p>
 
 {{% blocks/section type="row" %}}
-{{% blocks/feature icon="fa-tower-broadcast" title="Downtown Kingsport Gateway" url="/nodes/kingsport-gateway/" %}}
-High‑elevation relay covering downtown and riverfront. Ideal first‑hop for handhelds.
+{{% blocks/feature icon="fa-computer" title="Downtown Kingsport Gateway" url="/nodes/kptm/" %}}
+Located near Eastman downtown. Monitoring gateway for Tri-Cities Mesh.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-mountain" title="Buffalo Mountain Relay" url="/nodes/buffalo-mountain/" %}}
-Wide‑area ridge‑top node improving JC south‑side and I‑26 corridor reach.
+{{% blocks/feature icon="fa-tower-broadcast" title="Bays Mountain Tower" url="/nodes/bm1/" %}}
+Wide‑area mountaintop node at Kingsport Amateur Radio Club's repeater tower. Coverage for downtown Kingsport and Mount Carmel.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-city" title="Bristol North Sector" url="/nodes/bristol-north/" %}}
-Neighborhood relay filling gaps toward the state line and Bristol Motor Speedway.
+{{% blocks/feature icon="fa-city" title="HAHR Router" url="/nodes/hahr/" %}}
+Unknown node near Bristol, TN reaching to Kingsport.
 {{% /blocks/feature %}}
 {{% /blocks/section %}}
 
-> *These are placeholders—swap with your actual node slugs/titles when ready.*
 
 {{% /blocks/section %}}
 
