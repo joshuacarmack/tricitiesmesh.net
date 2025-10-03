@@ -5,17 +5,6 @@ description: First steps to join and use the Tri-Cities Mesh network.
 weight: 2
 ---
 
-{{< blocks/cover title="Getting Started" image_anchor="top" height="min" >}}
-<a class="btn btn-lg btn-primary me-3 mb-4" href="https://meshtastic.org/docs/software/android">
-Download App <i class="fas fa-mobile-alt ms-2"></i> </a> 
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://flasher.meshtastic.org/">
-Flash Firmware <i class="fas fa-microchip ms-2"></i> </a> 
-<a class="btn btn-lg btn-info me-3 mb-4" href="/community/">
-Community <i class="fas fa-users ms-2"></i> </a>
-{{< /blocks/cover >}}
-
----
-
 ## Welcome
 
 This page will help you take your first steps with **Tri-Cities Mesh**.  
