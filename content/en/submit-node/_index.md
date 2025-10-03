@@ -8,11 +8,10 @@ menu: { main: { weight: 30 } }
 Help us grow the mesh! Share your node’s basics below.
 {{% /blocks/lead %}}
 
-</br>
-
 <div style="max-width:900px; margin:0 auto;">
-<form name="submit-node" method="POST" enctype="multipart/form-data" action="/api/submit-node" class="needs-validation" novalidate>
-
+<form name="submit-node" method="POST" enctype="multipart/form-data"
+      action="/api/submit-node"
+      class="needs-validation" novalidate>
 
   <!-- Honeypot -->
   <div style="position:absolute; left:-5000px" aria-hidden="true">
@@ -103,13 +102,17 @@ Help us grow the mesh! Share your node’s basics below.
       </div>
       <div class="col-md-3 mb-3">
         <label class="form-label">Latitude *</label>
-        <input type="text" class="form-control" name="lat" required pattern="^-?\\d{1,2}\\.\\d+$" placeholder="36.3133">
-        <div class="invalid-feedback">Use decimal degrees (e.g., 36.3133).</div>
+        <input type="number" class="form-control" name="lat"
+               inputmode="decimal" step="0.000001" min="-90" max="90"
+               placeholder="36.313300" required>
+        <div class="invalid-feedback">Latitude must be between -90 and 90.</div>
       </div>
       <div class="col-md-3 mb-3">
         <label class="form-label">Longitude *</label>
-        <input type="text" class="form-control" name="lon" required pattern="^-?\\d{1,3}\\.\\d+$" placeholder="-82.3535">
-        <div class="invalid-feedback">Use decimal degrees (e.g., -82.3535).</div>
+        <input type="number" class="form-control" name="lon"
+               inputmode="decimal" step="0.000001" min="-180" max="180"
+               placeholder="-82.353500" required>
+        <div class="invalid-feedback">Longitude must be between -180 and 180.</div>
       </div>
       <div class="col-md-6 mb-3">
         <button type="button" class="btn btn-secondary" id="useLocation">Use my location</button>
@@ -172,7 +175,10 @@ Help us grow the mesh! Share your node’s basics below.
   (function () {
     const form = document.querySelector('form.needs-validation');
     form.addEventListener('submit', function (e) {
-      if (!form.checkValidity()) { e.preventDefault(); e.stopPropagation(); }
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
       form.classList.add('was-validated');
     }, false);
   })();
