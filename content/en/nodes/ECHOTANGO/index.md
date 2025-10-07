@@ -16,7 +16,7 @@ contact:
   email: wx4et@outlook.com
   discord: 
 location:
-  name: Kingsport, TN (Wilcox Dr)
+  name: Kingsport, TN (Borden Park)
   latitude: 36.535662
   longitude: -82.541609
   agl: 
