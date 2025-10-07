@@ -30,6 +30,8 @@ View some of the telemetry at [https://tricitiesmesh.net/map](https://tricitiesm
 
 The node is a Heltec V3 that is on a pole on my roof. It is powered with a PoE splitter so I can run simple CAT5E cable up to it for power. It is in a cheap NEMA enclosure with an external ALFA antenna.
 
+![Node testing](fa442070-7582-43b5-9d7d-036e0115e343.jpg)
+
 ## Software
 
 For the software portion, I have a Windows virtual machine running on my home server that has [MeshSense by Affirmatech](https://affirmatech.com/meshsense) installed. The node is connected to my Wi-Fi so the server is able to connect to it that way. I can then expose this software through my reverse proxy so anyone can visit [https://meshtastic.n4jhc.com/](https://meshtastic.n4jhc.com/) and view the interface of the application.
