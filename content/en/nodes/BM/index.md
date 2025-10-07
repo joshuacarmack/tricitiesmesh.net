@@ -30,6 +30,8 @@ Part of the Kingsport Amateur Radio Club repeater site.
 
 The node was reinstalled on 10/6/2025 with a new RAK node and enclosure with a 900MHz cavity filter to try and mitigate the noise and issues the node has been having with reception. 
 
+![New node with cavity filter](newnode-filter.jpg)
+
 We are going to redo the mounting and try and mount the node 3' off of the tower to see if that helps because currently it is still not working. It will transmit all day long but not receive anything.
 
 ## Summer of research and trials - March-August 2025
@@ -53,3 +55,5 @@ The node was removed from the tower in January and I took it home to diagnose th
 ## Original Installation - July 2024
 
 The original node was installed in July/August of 2024 and was not working when installed. 
+
+![Old Node](oldnode.jpg)
