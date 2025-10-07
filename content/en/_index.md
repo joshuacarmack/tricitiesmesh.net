@@ -68,7 +68,7 @@ description: Meshtastic for the Tri-Cities (Kingsport • Johnson City • Brist
   Near Eastman downtown. Monitoring gateway for Tri-Cities Mesh.
   {{% /blocks/feature %}}
 
-  {{% blocks/feature icon="fa-tower-broadcast" title="Bays Mountain Tower" url="/nodes/bm1/" %}}
+  {{% blocks/feature icon="fa-tower-broadcast" title="Bays Mountain Tower" url="/nodes/bm/" %}}
   Wide-area mountaintop node at the Kingsport Amateur Radio Club site.
   {{% /blocks/feature %}}
 
