@@ -16,9 +16,9 @@ contact:
   email: wx4et@outlook.com
   discord: 
 location:
-  name: Kingsport, TN (Borden Park)
-  latitude: 36.535662
-  longitude: -82.541609
+  name: Kingsport, TN (Lovedale Dr)
+  latitude: 36.5575
+  longitude: -82.5646
   agl: 
   altitude: 
 ---
