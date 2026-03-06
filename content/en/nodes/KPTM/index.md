@@ -12,7 +12,7 @@ lora:
 contact:
   name: Joshua Carmack
   amateurCallsign: N4JHC
-  mestasticName: N4JHC
+  meshtasticName: N4JHC
   email: n4jhcradio@gmail.com
   discord: 
 location:
