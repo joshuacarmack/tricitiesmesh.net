@@ -12,7 +12,7 @@ lora:
 contact:
   name: Erik McCord
   amateurCallsign: WX4ET
-  mestasticName: WX4ET
+  meshtasticName: WX4ET
   email: wx4et@outlook.com
   discord: 
 location:

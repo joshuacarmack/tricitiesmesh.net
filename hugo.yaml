@@ -129,7 +129,7 @@ params:
 
   copyright:
     authors: Tri-Cities Mesh | This site is not affiliated with or endorsed by the Meshtastic project.
-    from_year: 
+    from_year: 2024
 
   # User interface configuration
   ui:
@@ -179,6 +179,8 @@ params:
         url: https://github.com/joshuacarmack/tricitiesmesh.net
         icon: fab fa-github
         desc: Help develop our website
+  meshmapUrl: https://meshmap.net
+
   custom_css:
     - css/custom.css
 

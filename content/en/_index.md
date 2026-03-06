@@ -72,8 +72,8 @@ description: Meshtastic for the Tri-Cities (Kingsport • Johnson City • Brist
   Wide-area mountaintop node at the Kingsport Amateur Radio Club site.
   {{% /blocks/feature %}}
 
-  {{% blocks/feature icon="fa-city" title="HAHR Router" url="/nodes/hahr/" %}}
-  Node near Bristol, TN with consistent paths into Kingsport.
+  {{% blocks/feature icon="fa-house-signal" title="Echo Tango" url="/nodes/echotango/" %}}
+  LilyGO T-Beam node in Kingsport with line-of-sight toward Bays Mountain.
   {{% /blocks/feature %}}
 {{% /blocks/section %}}
 {{% /blocks/section %}}
