@@ -1,6 +1,7 @@
 ---
 title: Tri-Cities Mesh
 description: MeshCore off-grid LoRa mesh for the Tri-Cities — Kingsport, Johnson City, and Bristol.
+images: [share.jpg]
 ---
 
 {{< blocks/cover title="Tri-Cities Mesh" image_anchor="top" height="full" >}}

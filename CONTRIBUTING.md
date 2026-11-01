@@ -1,28 +1,22 @@
-# How to Contribute
+# Contributing to tricitiesmesh.net
 
-We'd love to accept your patches and contributions to this project. There are
-just a few small guidelines you need to follow.
+Thanks for helping improve the Tri-Cities Mesh site.
 
-## Contributor License Agreement
+## Quick fixes
 
-Contributions to this project must be accompanied by a Contributor License
-Agreement. You (or your employer) retain the copyright to your contribution;
-this simply gives us permission to use and redistribute your contributions as
-part of the project. Head over to <https://cla.developers.google.com/> to see
-your current agreements on file or to sign a new one.
+Every docs page has an **Edit this page** link that opens the file on GitHub, where you can propose a change.
 
-You generally only need to submit a CLA once, so if you've already submitted one
-(even if it was for a different project), you probably don't need to do it
-again.
+## Local changes
 
-## Code reviews
+1. Fork the repo and create a branch.
+2. Run `npm install`, then `npm run serve`, and open <http://localhost:1313>.
+3. Edit content in `content/en/`. Node pages live in `content/en/nodes/<NAME>/index.md`. See the README for the front matter fields.
+4. Open a pull request. Every change is reviewed before it goes live.
 
-All submissions, including submissions by project members, require review. We
-use GitHub pull requests for this purpose. Consult
-[GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
-information on using pull requests.
+## Featuring a node
 
-## Community Guidelines
+To get a repeater or room server listed, use the [Submit a Node](https://tricitiesmesh.net/submit-node/) form, or open a PR that adds a page under `content/en/nodes/`.
 
-This project follows
-[Google's Open Source Community Guidelines](https://opensource.google.com/conduct/).
+## Questions
+
+Email [contact@tricitiesmesh.net](mailto:contact@tricitiesmesh.net) or ask in the [Discord](https://tricitiesmesh.net/discord).

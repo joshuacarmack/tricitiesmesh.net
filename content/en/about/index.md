@@ -2,6 +2,7 @@
 title: About
 linkTitle: About
 menu: {main: {weight: 50}}
+images: [share.jpg]
 ---
 
 {{% blocks/cover title="About Tri-Cities Mesh" image_anchor="bottom" height="auto" %}}

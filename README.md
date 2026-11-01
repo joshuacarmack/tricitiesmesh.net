@@ -42,22 +42,6 @@ Use the npm scripts (`npm run serve`, `npm run build:production`) rather than a 
 
 Open [http://localhost:1313](http://localhost:1313) in your browser. Changes hot-reload automatically.
 
-### Running with Docker
-
-If you'd rather skip installing dependencies:
-
-```bash
-docker-compose up --build
-```
-
-Then open [http://localhost:1313](http://localhost:1313). Press **Ctrl+C** to stop.
-
-To clean up:
-
-```bash
-docker-compose rm
-```
-
 ---
 
 ## Node pages
@@ -122,7 +106,7 @@ Content lives in `content/en/`. Hugo's [content organization docs](https://gohug
 
 | Channel | Link |
 |---|---|
-| Facebook Group | [Tri-Cities Mesh group](https://www.facebook.com/groups/1096862151623739) |
+| Facebook Group | [Tri-Cities Mesh](https://www.facebook.com/groups/1096862151623739) |
 | Discord | [discord.gg/ZC9wqtxWTV](https://discord.gg/ZC9wqtxWTV) |
 | Live Map | [map.meshcore.io](https://map.meshcore.io/) |
 
