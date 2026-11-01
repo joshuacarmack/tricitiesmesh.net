@@ -40,7 +40,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     // Collect fields
     const p = collectFields(form, [
       "contact_name","contact_email","callsign","ok_to_contact",
-      "node_name","device","power","antenna","always_on",
+      "node_name","device","role","public_key","power","antenna","always_on",
       "city","lat","lon","elevation_ft","location_notes","show_as_approx",
       "coverage","photo_url"
     ]);
@@ -179,6 +179,8 @@ function buildDiscordEmbed(p: Record<string, string>) {
   const nodeBlock = [
     p.node_name ? `**${truncate(p.node_name, 240)}**` : "**—**",
     `Device: ${p.device || "—"}`,
+    `Role: ${p.role || "—"}`,
+    `Public key: ${p.public_key || "—"}`,
     `Power: ${p.power || "—"}`,
     `Antenna: ${p.antenna || "—"}`,
     `Always On: ${p.always_on || "—"}`

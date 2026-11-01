@@ -1,6 +1,6 @@
 ---
 title: Thanks!
-description: Share your Meshtastic node details to help us map coverage.
+description: Thanks for submitting your node.
 ---
 
 {{% blocks/lead %}}

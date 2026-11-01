@@ -1,6 +1,29 @@
-/*
+// Tri-Cities Mesh theme: Appalachian ridgeline teal with a warm "signal" amber.
 
-Add styles or override variables from the theme here.
+$primary: #1d5363;
+$secondary: #f0a340;
+$success: #3e9b74;
+$info: #9cc9bf;
+$warning: #e9874b;
+$danger: #d0574a;
+$light: #eef5f3;
+$dark: #10252d;
 
-*/
+// Docsy mixes $blue into link colors on colored sections, so make it the brand teal.
+$blue: #1d6f86;
+$link-color: #1d6f86;
 
+// Order of section colors when a block doesn't set one.
+$td-box-colors: $dark, $primary, $secondary, $info, $white, $gray-600, $success,
+  $warning, $dark, $danger, $primary, $secondary, $info;
+
+$enable-gradients: false;
+$enable-shadows: false;
+
+$google_font_name: "Inter";
+$google_font_family: "Inter:300,400,500,600,700,800";
+
+$border-radius: 0.5rem;
+$border-radius-lg: 0.75rem;
+$btn-border-radius-lg: 2rem;
+$btn-border-radius: 2rem;

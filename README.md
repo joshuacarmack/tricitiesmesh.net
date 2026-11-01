@@ -1,8 +1,8 @@
 # Tri-Cities Mesh
 
-The source for **[tricitiesmesh.net](https://tricitiesmesh.net)** — a community site for [Meshtastic](https://meshtastic.org) users in the Tri-Cities area of Northeast Tennessee (Kingsport · Johnson City · Bristol).
+The source for **[tricitiesmesh.net](https://tricitiesmesh.net)** — a community site for the [MeshCore](https://meshcore.io) mesh network in the Tri-Cities area of Northeast Tennessee (Kingsport · Johnson City · Bristol).
 
-Meshtastic is an open-source, off-grid, long-range messaging network built on affordable LoRa radios. No cell service, no fees, no internet required.
+MeshCore is open-source firmware that turns affordable LoRa radios into an off-grid, long-range messaging network. No cell service, no fees, no internet required. (The community started on Meshtastic and moved to MeshCore in 2026.)
 
 ---
 
@@ -10,8 +10,9 @@ Meshtastic is an open-source, off-grid, long-range messaging network built on af
 
 This site is built with [Hugo](https://gohugo.io/) using the [Docsy](https://www.docsy.dev/) theme. It covers:
 
-- **Getting started** guides for new users
-- **Node directory** — community nodes across the region
+- **Getting started** guides for new users, including the local radio preset
+- **Coming from Meshtastic** migration guide
+- **Node directory** — repeaters and fixed nodes across the region (`content/en/nodes/`)
 - **Coverage map** links
 - **Blog** and community news
 
@@ -56,6 +57,25 @@ docker-compose rm
 
 ---
 
+## Node pages
+
+Each featured node is a page bundle in `content/en/nodes/<NAME>/index.md` with front matter like:
+
+```yaml
+meshcore:
+  name: Bays Mountain 1
+  role: Repeater        # Companion | Repeater | Room Server | Sensor
+  publicKey: ""         # MeshCore public key (or its first few bytes)
+  hardware: RAK4631
+  status: Active        # Active | Migrating | Offline
+location:
+  name: Bays Mountain Radio Towers
+  latitude: 36.52684
+  longitude: -82.58682
+```
+
+---
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for full details. The short version:
@@ -82,12 +102,12 @@ Content lives in `content/en/`. Hugo's [content organization docs](https://gohug
 
 | Channel | Link |
 |---|---|
-| Facebook Group | [Tri-Cities Meshtastic](https://www.facebook.com/groups/1096862151623739) |
+| Facebook Group | [Tri-Cities Mesh group](https://www.facebook.com/groups/1096862151623739) |
 | Discord | [discord.gg/ZC9wqtxWTV](https://discord.gg/ZC9wqtxWTV) |
-| Live Coverage Map | [meshtastic.n4jhc.com](https://meshtastic.n4jhc.com/) |
+| Live Map | [map.meshcore.io](https://map.meshcore.io/) |
 
 ---
 
 ## License
 
-See [LICENSE](LICENSE). This site is not affiliated with or endorsed by the Meshtastic project.
+See [LICENSE](LICENSE). This site is not affiliated with or endorsed by the MeshCore project.

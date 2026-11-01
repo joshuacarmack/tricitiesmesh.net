@@ -1,67 +1,60 @@
 {{ define "main" }}
+{{ $mc := .Params.meshcore | default dict -}}
 <div class="td-content">
   <h1>{{ .Title }}</h1>
+  <p class="mb-3">
+    {{ with $mc.role }}<span class="tcm-badge tcm-badge--{{ . | lower | urlize }}">{{ . }}</span>{{ end }}
+    {{ with $mc.status }}<span class="tcm-badge tcm-badge--{{ . | lower | urlize }}">{{ . }}</span>{{ end }}
+  </p>
   <div class="row">
     <!-- Map & details column -->
-    <div class="col-md-4 order-1 order-md-2">
-      <div class="card">
-        {{ with .Params.location }}
-        <img class="card-img-top"
-          src="https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/pin-s+000({{ .longitude }},{{ .latitude }})/{{ .longitude }},{{ .latitude }},12/500x500?access_token={{ site.Params.mapboxToken}}" />
-        {{ end }}
-        <ul class="list-group list-group-flush">
+    <div class="col-md-4 order-1 order-md-2 mb-4">
+      <div class="tcm-node-details">
+        {{ with .Params.location }}{{ if and .latitude .longitude }}
+        {{ $lat := float .latitude }}{{ $lon := float .longitude }}
+        <iframe class="tcm-map" loading="lazy" title="Map of {{ $.Title }}"
+          src="https://www.openstreetmap.org/export/embed.html?bbox={{ sub $lon 0.03 }}%2C{{ sub $lat 0.02 }}%2C{{ add $lon 0.03 }}%2C{{ add $lat 0.02 }}&amp;layer=mapnik&amp;marker={{ $lat }}%2C{{ $lon }}"></iframe>
+        {{ end }}{{ end }}
+        <dl>
           {{ with .Params.location }}
-          <li class="list-group-item">Location: {{ .name }} ({{ .latitude }}, {{ .longitude }})</li>
-          <li class="list-group-item">Altitude: {{ with .altitude }}{{ . }}{{ end }} meters / {{ with .agl }}{{ . }} above ground{{ end }}</li>
+          {{ with .name }}<dt>Location</dt><dd>{{ . }}</dd>{{ end }}
+          {{ if or .altitude .agl }}
+          <dt>Height</dt>
+          <dd>{{ with .altitude }}{{ . }} m elevation{{ end }}{{ if and .altitude .agl }} · {{ end }}{{ with .agl }}{{ . }} m above ground{{ end }}</dd>
           {{ end }}
-          <li class="list-group-item">
-            {{ with site.Params.meshmapUrl }}
-            {{ with $.Params.lora.nodeNumber }}
-            <a class="card-link" href="{{ site.Params.meshmapUrl }}/?node_id={{ . }}">View on MeshMap</a>
-            {{ end }}
-            {{ end }}
-          </li>
+          {{ end }}
+          {{ with $mc.name }}<dt>MeshCore name</dt><dd>{{ . }}</dd>{{ end }}
+          {{ with $mc.hardware }}<dt>Hardware</dt><dd>{{ . }}</dd>{{ end }}
+          {{ with $mc.publicKey }}<dt>Public key</dt><dd><code>{{ . }}</code></dd>{{ end }}
           {{ with .Params.contact }}
-          <li class="list-group-item"><b>Contact Info</b></li>
-          {{ with .name }}
-          <li class="list-group-item">{{ . }}</li>
+          <dt>Contact</dt>
+          <dd>
+            {{ with .name }}{{ . }}<br>{{ end }}
+            {{ with .amateurCallsign }}<i class="fa-solid fa-walkie-talkie me-1"></i> {{ . }}<br>{{ end }}
+            {{ with .meshcoreName }}<i class="fa-solid fa-circle-nodes me-1"></i> {{ . }} on MeshCore<br>{{ end }}
+            {{ with .email }}<i class="fa-solid fa-envelope me-1"></i> <a href="mailto:{{ . }}">{{ . }}</a><br>{{ end }}
+            {{ with .discord }}<i class="fa-brands fa-discord me-1"></i> {{ . }}{{ end }}
+          </dd>
           {{ end }}
-          {{ with .email }}
-          <li class="list-group-item"><i class="fa-solid fa-envelope"></i> {{ . }}</li>
-          {{ end }}
-          {{ with .amateurCallsign }}
-          <li class="list-group-item"><i class="fa-solid fa-walkie-talkie"></i> {{ . }} on Amateur Radio</li>
-          {{ end }}
-          {{ with .meshtasticName }}
-          <li class="list-group-item"><i class="fa-solid fa-circle-nodes"></i> {{ . }} on Meshtastic</li>
-          {{ end }}
-          {{ with .discord }}
-          <li class="list-group-item"><i class="fa-brands fa-discord"></i> {{ . }}</li>
-          {{ end }}
-          {{ end }}
-        </ul>
+        </dl>
+        {{ with site.Params.meshcore.map }}
+        <div class="px-3 pb-3">
+          <a class="btn btn-sm btn-outline-primary w-100" href="{{ . }}" target="_blank" rel="noopener">
+            <i class="fas fa-map-location-dot me-1"></i> Open the live MeshCore map
+          </a>
+        </div>
+        {{ end }}
       </div>
     </div>
 
     <!-- Main content column -->
     <div class="col-md-8 order-2 order-md-1">
       {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
-      <header class="article-meta">
-        {{ partial "taxonomy_terms_article_wrapper.html" . -}}
-        {{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) -}}
-        {{ partial "reading-time.html" . -}}
-        {{ end -}}
-      </header>
-      {{ .Render "td-content-after-header" -}}
+      {{ .Render "_td-content-after-header" -}}
       {{ .Content }}
     </div>
   </div>
 
-  {{ partial "feedback.html" . -}}
-  {{ if (.Site.Config.Services.Disqus.Shortname) -}}
-  <br />
-  {{- partial "disqus-comment.html" . -}}
-  {{ end -}}
   {{ partial "page-meta-lastmod.html" . }}
 </div>
 {{ end }}
