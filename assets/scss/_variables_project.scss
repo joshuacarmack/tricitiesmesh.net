@@ -27,3 +27,6 @@ $border-radius: 0.5rem;
 $border-radius-lg: 0.75rem;
 $btn-border-radius-lg: 2rem;
 $btn-border-radius: 2rem;
+
+// Brand-colored navbar (Docsy 0.14+ defaults to the page background).
+$td-navbar-bg-color: rgba(29, 83, 99, var(--bs-bg-opacity));

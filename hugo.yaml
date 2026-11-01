@@ -39,13 +39,16 @@ permalinks:
 # Image processing configuration.
 imaging:
   resampleFilter: CatmullRom
-  quality: 75
+  jpeg:
+    quality: 75
+  webp:
+    quality: 75
   anchor: smart
 
 # Language configuration
 languages:
   en:
-    languageName: English
+    label: English
     title: Tri-Cities Mesh
     params:
       description: MeshCore off-grid LoRa mesh for the Tri-Cities of Northeast Tennessee — Kingsport, Johnson City, and Bristol.
@@ -137,6 +140,8 @@ params:
     breadcrumb_disable: false
     # Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top navbar
     navbar_logo: true
+    # Light text on the teal navbar.
+    navbar_theme: dark
     # Set to true if you don't want the top navbar to be translucent when over a `block/cover`, like on the homepage.
     navbar_translucent_over_cover_disable: false
     # Enable to show the side bar menu in its compact state.
@@ -193,7 +198,7 @@ module:
   # workspace: docsy.work
   hugoVersion:
     extended: true
-    min: 0.146.0
+    min: 0.160.1
   imports:
-    - path: github.com/google/docsy
+    - path: github.com/docsy/docsy/theme
       disable: false

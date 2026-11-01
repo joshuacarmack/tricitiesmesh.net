@@ -24,9 +24,10 @@ Live site: [tricitiesmesh.net](https://tricitiesmesh.net)
 
 ### Prerequisites
 
-- [Hugo **extended**](https://gohugo.io/installation/) v0.146.0 or later
-- [Go](https://go.dev/dl/) 1.18 or later
-- [Node.js](https://nodejs.org/) (for PostCSS/SCSS)
+- [Node.js](https://nodejs.org/) 22 or later (LTS 24 recommended)
+- [Go](https://go.dev/dl/) 1.18 or later (Hugo uses it to fetch the Docsy theme module)
+
+`npm install` provides everything else: Hugo **extended** (pinned in `package.json`) and Dart Sass (`sass-embedded`), which Docsy 0.17+ requires.
 
 ### Setup
 
@@ -34,8 +35,10 @@ Live site: [tricitiesmesh.net](https://tricitiesmesh.net)
 git clone https://github.com/joshuacarmack/tricitiesmesh.net.git
 cd tricitiesmesh.net
 npm install
-hugo server
+npm run serve
 ```
+
+Use the npm scripts (`npm run serve`, `npm run build:production`) rather than a global `hugo`, so the pinned Hugo and Dart Sass from `node_modules/.bin` are used.
 
 Open [http://localhost:1313](http://localhost:1313) in your browser. Changes hot-reload automatically.
 
@@ -76,6 +79,19 @@ location:
 
 ---
 
+## Updating Hugo and Docsy
+
+```bash
+npm run update:hugo                              # bump hugo-extended
+npm install-scripts approve hugo-extended        # re-approve its installer
+hugo mod get -u github.com/docsy/docsy/theme     # bump Docsy
+hugo mod tidy && hugo mod npm pack && npm install
+```
+
+Read the [Docsy release notes](https://www.docsy.dev/blog/) before upgrading Docsy. Most releases include breaking changes.
+
+---
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for full details. The short version:
@@ -90,9 +106,13 @@ Content lives in `content/en/`. Hugo's [content organization docs](https://gohug
 
 ## Troubleshooting
 
-**`shortcode "blocks/cover" not found`** — You're running an outdated Hugo version. Upgrade to v0.146.0+.
+**`module "github.com/docsy/docsy/theme" ... hugoVersion`** — Your Hugo is too old. Docsy 0.18 needs Hugo extended v0.160.1+. Use `npm run serve` to get the pinned version.
 
-**`TOCSS: failed to transform "scss/main.scss"`** — You need the Hugo **extended** edition, not the standard one.
+**Sass / `TOCSS` errors** — Dart Sass isn't on your `PATH`. Run `npm install`, then build through the npm scripts.
+
+**`npm dependencies are out of sync`** — After updating Docsy, run `hugo mod npm pack && npm install`.
+
+**Hugo binary missing after `npm install`** — npm 11+ blocks install scripts unless approved. `hugo-extended` is approved in `package.json` under `allowScripts`. If you bump its version, run `npm install-scripts approve hugo-extended`.
 
 **`binary with name "go" not found`** — Go is not installed. [Install Go](https://go.dev/dl/) and try again.
 
