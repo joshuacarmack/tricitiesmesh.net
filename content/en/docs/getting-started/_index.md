@@ -87,7 +87,7 @@ Repeaters are what make the mesh work. If you have a high spot with power and yo
 - **Location beats everything.** Height and a clear view toward town matter more than radio power.
 - **Power.** USB, PoE, or solar with a battery. Solar setups need enough battery to get through a few cloudy days.
 - **Weatherproofing.** Use an outdoor enclosure, sealed cable glands, and a properly mounted external antenna.
-- **Setup.** Flash the **Repeater** firmware, then configure it over USB with the [MeshCore config tool](https://config.meshcore.io/). Set the US preset and a name, and set an **admin password**. After that you can manage it remotely from the app.
+- **Setup.** Flash the **Repeater** firmware, then configure it over USB with the [MeshCore config tool](https://config.meshcore.io/). Set the US preset, change the **coding rate to 8** (`set radio 910.525,62.5,7,8`), give it a name, and set an **admin password**. After that you can manage it remotely from the app.
 - **Tell us about it.** [Submit your node](/submit-node/) so we can track coverage and feature it.
 
 Not sure where to start? Email [contact@tricitiesmesh.net](mailto:contact@tricitiesmesh.net). We're happy to help pick a site and gear.

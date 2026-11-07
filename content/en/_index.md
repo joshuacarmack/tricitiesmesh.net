@@ -96,6 +96,54 @@ images: [share.jpg]
 {{< /blocks/section >}}
 
 {{< blocks/section color="light" >}}
+<h2 class="tcm-section-title" id="settings">Tri-Cities MeshCore settings</h2>
+<p class="tcm-section-sub">Frequency, bandwidth, and spreading factor must match the rest of the mesh, or you won't hear anyone.</p>
+
+<div class="tcm-note">
+  <i class="fas fa-circle-info"></i>
+  <p>Start by selecting the <strong>USA/Canada (Recommended)</strong> preset, then change only the <strong>Coding Rate</strong> if needed. Once you change the Coding Rate, the preset will show <strong>Custom</strong> instead of USA/Canada. This is normal.</p>
+</div>
+
+<div class="tcm-grid tcm-settings-grid">
+  <div class="tcm-card">
+    <div class="tcm-icon"><i class="fas fa-mobile-screen"></i></div>
+    <h3>Companion settings</h3>
+    <dl class="tcm-settings">
+      <dt>Preset</dt><dd>USA/Canada (Recommended)</dd>
+      <dt>Frequency</dt><dd>910.525 MHz</dd>
+      <dt>Bandwidth</dt><dd>62.5 kHz</dd>
+      <dt>Spreading factor</dt><dd>7</dd>
+      <dt>Coding rate</dt><dd>5 <span class="tcm-settings-hint">or 8 for weak signals</span></dd>
+    </dl>
+  </div>
+  <div class="tcm-card">
+    <div class="tcm-icon"><i class="fas fa-tower-broadcast"></i></div>
+    <h3>Repeater settings</h3>
+    <dl class="tcm-settings">
+      <dt>Preset</dt><dd>USA/Canada (Recommended)</dd>
+      <dt>Frequency</dt><dd>910.525 MHz</dd>
+      <dt>Bandwidth</dt><dd>62.5 kHz</dd>
+      <dt>Spreading factor</dt><dd>7</dd>
+      <dt>Coding rate</dt><dd>8</dd>
+    </dl>
+    <p class="tcm-settings-cli">Over USB serial: <code>set radio 910.525,62.5,7,8</code></p>
+  </div>
+</div>
+
+<p class="text-center mt-5">
+  <a class="btn btn-lg btn-primary me-2 mb-2" href="https://flasher.meshcore.io/" target="_blank" rel="noopener">Flash your device <i class="fas fa-bolt ms-2"></i></a>
+  <a class="btn btn-lg btn-outline-primary mb-2" href="https://config.meshcore.io/" target="_blank" rel="noopener">Repeater config tool <i class="fas fa-sliders ms-2"></i></a>
+</p>
+{{< /blocks/section >}}
+
+{{< blocks/section color="white" >}}
+<h2 class="tcm-section-title" id="channels">Channels</h2>
+<p class="tcm-section-sub">Group chats on the mesh. Add a channel in the MeshCore app by name, or with its key for private ones. More local channels are coming soon.</p>
+
+{{< channels >}}
+{{< /blocks/section >}}
+
+{{< blocks/section color="light" >}}
 <h2 class="tcm-section-title">Featured nodes</h2>
 <p class="tcm-section-sub">Sites that help anchor coverage across the region. Running a fixed node? <a href="/submit-node/">Tell us about it</a>.</p>
 
