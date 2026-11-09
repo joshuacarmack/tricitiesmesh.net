@@ -1,85 +1,76 @@
 ---
 title: About
 linkTitle: About
-menu: {main: {weight: 10}}
+menu: {main: {weight: 50}}
+images: [share.jpg]
 ---
 
 {{% blocks/cover title="About Tri-Cities Mesh" image_anchor="bottom" height="auto" %}}
 
-Connecting our community with open, off-grid LoRa mesh networking.  
+A community-owned, off-grid network for Northeast Tennessee.
 {.mt-5}
 
 {{% /blocks/cover %}}
 
 {{% blocks/lead %}}
 
-Tri-Cities Mesh is a grassroots project bringing together amateur radio operators, makers, and technology enthusiasts across Kingsport, Johnson City, and Bristol.  
-Our goal is to build a resilient, community-owned communication network that works even when cell towers or the internet are unavailable.
+Tri-Cities Mesh is a grassroots project that brings together amateur radio operators, makers, and anyone curious about radio across Kingsport, Johnson City, and Bristol.
+We're building a resilient messaging network that keeps working when the cell towers or the internet don't.
 
 {{% /blocks/lead %}}
 
-{{% blocks/section %}}
+{{% blocks/section color="white" %}}
 
-# Our Mission
+## Our mission
 
-We believe communication should be **simple, reliable, and accessible to everyone**.  
-By using low-power LoRa radios, we create long-range mesh links that support text messaging, GPS location sharing, and data transport—without monthly fees or dependence on traditional infrastructure.
-
-{{% /blocks/section %}}
-
-{{% blocks/section %}}
-
-# How It Started
-
-In 2025, a few local ham radio operators discovered the Meshtastic project and recognized its potential.  
-They saw it as both **an exciting experiment in radio technology** and a **practical tool for community preparedness**.  
-From those first test nodes, Tri-Cities Mesh was born—built on the idea that anyone can take part in expanding the network and making it stronger.
+Communication should be **simple, reliable, and open to everyone**.
+Small, low-power LoRa radios running [MeshCore](https://meshcore.io) form long-range mesh links for text messaging and location sharing, without monthly fees or traditional infrastructure.
 
 {{% /blocks/section %}}
 
-{{% blocks/section %}}
+{{% blocks/section color="light" %}}
 
-# Who It’s For
+## How it started
 
-- Amateur radio operators experimenting with new digital modes  
-- Makers and tinkerers exploring off-grid technology  
-- Community groups preparing for emergency communication  
-- Anyone curious about resilient, people-powered networks  
+A few local ham radio operators found the Meshtastic project and saw its potential, both as **an exciting experiment in radio** and as **a practical tool for community preparedness**. The first test nodes went up in Kingsport, including an early install on the Bays Mountain tower, and Tri-Cities Mesh grew from there.
+
+In 2026 the community moved to **MeshCore**. Its repeater-based design suits a growing regional network across our ridges and valleys better. [Read why we switched](/docs/from-meshtastic/).
 
 {{% /blocks/section %}}
 
-{{% blocks/section %}}
-<style>
-.get-involved a {
-  color: #ffffff;
-  font-weight: 600;
-  text-decoration: underline;
-}
-.get-involved a:hover {
-  color: #ffd700;
-}
-</style>
+{{% blocks/section color="white" %}}
 
+## Who it's for
+
+- Amateur radio operators trying new digital modes
+- Makers and tinkerers exploring off-grid technology
+- Community groups preparing for emergency communication
+- Hikers, campers, and anyone who spends time out of cell range
+- Anyone curious about networks run by the people who use them
+
+{{% /blocks/section %}}
+
+{{% blocks/section color="primary" %}}
 <div class="get-involved">
 
-# Get Involved
+## Get involved
 
-We’re always looking for new participants! You can:
+New people are always welcome. You can:
 
-- [Join the Mesh](/join/) with your own node  
-- [Explore Coverage](/map/) to see active stations  
-- Connect with local operators at our events and meetups  
+- [Get on the mesh](/docs/getting-started/) with your own radio
+- [Host a repeater](/docs/getting-started/#running-a-repeater) at a high spot
+- [See who's on the air](https://map.meshcore.io/) on the live map
+- [Join the Discord](/discord) and meet local operators
 
-Whether you want to deploy a node on your roof, run experiments, or just learn, there’s a place for you here.
+Whether you want to put a repeater on your roof, run experiments, or just learn, there's a place for you.
 
 </div>
 {{% /blocks/section %}}
 
+{{% blocks/section color="white" %}}
 
-{{% blocks/section %}}
+## Looking ahead
 
-# Looking Ahead
-
-Tri-Cities Mesh is growing. Our long-term vision is a **robust regional mesh backbone** linking neighborhoods, schools, and public spaces—an open platform for innovation and preparedness.
+Our long-term goal is a **reliable regional backbone of repeaters** linking neighborhoods, schools, and public spaces across the Tri-Cities. We want it to be an open platform for learning, experimenting, and preparedness.
 
 {{% /blocks/section %}}

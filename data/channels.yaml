@@ -1,0 +1,9 @@
+# Channels listed on the homepage.
+# Add one entry per channel. Fields:
+#   name:        channel name as it appears in the app (e.g. "#tricities")
+#   description: what the channel is for
+#   key:         optional secret key for private channels (omit for public/hashtag channels)
+#   icon:        optional Font Awesome icon name (defaults to "hashtag")
+- name: Public
+  description: Built into every MeshCore radio. Say hello, ask for help, and see who's around.
+  icon: globe

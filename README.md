@@ -1,8 +1,8 @@
 # Tri-Cities Mesh
 
-The source for **[tricitiesmesh.net](https://tricitiesmesh.net)** — a community site for [Meshtastic](https://meshtastic.org) users in the Tri-Cities area of Northeast Tennessee (Kingsport · Johnson City · Bristol).
+The source for **[tricitiesmesh.net](https://tricitiesmesh.net)** — a community site for the [MeshCore](https://meshcore.io) mesh network in the Tri-Cities area of Northeast Tennessee (Kingsport · Johnson City · Bristol).
 
-Meshtastic is an open-source, off-grid, long-range messaging network built on affordable LoRa radios. No cell service, no fees, no internet required.
+MeshCore is open-source firmware that turns affordable LoRa radios into an off-grid, long-range messaging network. No cell service, no fees, no internet required. (The community started on Meshtastic and moved to MeshCore in 2026.)
 
 ---
 
@@ -10,8 +10,9 @@ Meshtastic is an open-source, off-grid, long-range messaging network built on af
 
 This site is built with [Hugo](https://gohugo.io/) using the [Docsy](https://www.docsy.dev/) theme. It covers:
 
-- **Getting started** guides for new users
-- **Node directory** — community nodes across the region
+- **Getting started** guides for new users, including the local radio preset
+- **Coming from Meshtastic** migration guide
+- **Node directory** — repeaters and fixed nodes across the region (`content/en/nodes/`)
 - **Coverage map** links
 - **Blog** and community news
 
@@ -23,9 +24,10 @@ Live site: [tricitiesmesh.net](https://tricitiesmesh.net)
 
 ### Prerequisites
 
-- [Hugo **extended**](https://gohugo.io/installation/) v0.146.0 or later
-- [Go](https://go.dev/dl/) 1.18 or later
-- [Node.js](https://nodejs.org/) (for PostCSS/SCSS)
+- [Node.js](https://nodejs.org/) 22 or later (LTS 24 recommended)
+- [Go](https://go.dev/dl/) 1.18 or later (Hugo uses it to fetch the Docsy theme module)
+
+`npm install` provides everything else: Hugo **extended** (pinned in `package.json`) and Dart Sass (`sass-embedded`), which Docsy 0.17+ requires.
 
 ### Setup
 
@@ -33,26 +35,44 @@ Live site: [tricitiesmesh.net](https://tricitiesmesh.net)
 git clone https://github.com/joshuacarmack/tricitiesmesh.net.git
 cd tricitiesmesh.net
 npm install
-hugo server
+npm run serve
 ```
+
+Use the npm scripts (`npm run serve`, `npm run build:production`) rather than a global `hugo`, so the pinned Hugo and Dart Sass from `node_modules/.bin` are used.
 
 Open [http://localhost:1313](http://localhost:1313) in your browser. Changes hot-reload automatically.
 
-### Running with Docker
+---
 
-If you'd rather skip installing dependencies:
+## Node pages
 
-```bash
-docker-compose up --build
+Each featured node is a page bundle in `content/en/nodes/<NAME>/index.md` with front matter like:
+
+```yaml
+meshcore:
+  name: Bays Mountain 1
+  role: Repeater        # Companion | Repeater | Room Server | Sensor
+  publicKey: ""         # MeshCore public key (or its first few bytes)
+  hardware: RAK4631
+  status: Active        # Active | Migrating | Offline
+location:
+  name: Bays Mountain Radio Towers
+  latitude: 36.52684
+  longitude: -82.58682
 ```
 
-Then open [http://localhost:1313](http://localhost:1313). Press **Ctrl+C** to stop.
+---
 
-To clean up:
+## Updating Hugo and Docsy
 
 ```bash
-docker-compose rm
+npm run update:hugo                              # bump hugo-extended
+npm install-scripts approve hugo-extended        # re-approve its installer
+hugo mod get -u github.com/docsy/docsy/theme     # bump Docsy
+hugo mod tidy && hugo mod npm pack && npm install
 ```
+
+Read the [Docsy release notes](https://www.docsy.dev/blog/) before upgrading Docsy. Most releases include breaking changes.
 
 ---
 
@@ -70,9 +90,13 @@ Content lives in `content/en/`. Hugo's [content organization docs](https://gohug
 
 ## Troubleshooting
 
-**`shortcode "blocks/cover" not found`** — You're running an outdated Hugo version. Upgrade to v0.146.0+.
+**`module "github.com/docsy/docsy/theme" ... hugoVersion`** — Your Hugo is too old. Docsy 0.18 needs Hugo extended v0.160.1+. Use `npm run serve` to get the pinned version.
 
-**`TOCSS: failed to transform "scss/main.scss"`** — You need the Hugo **extended** edition, not the standard one.
+**Sass / `TOCSS` errors** — Dart Sass isn't on your `PATH`. Run `npm install`, then build through the npm scripts.
+
+**`npm dependencies are out of sync`** — After updating Docsy, run `hugo mod npm pack && npm install`.
+
+**Hugo binary missing after `npm install`** — npm 11+ blocks install scripts unless approved. `hugo-extended` is approved in `package.json` under `allowScripts`. If you bump its version, run `npm install-scripts approve hugo-extended`.
 
 **`binary with name "go" not found`** — Go is not installed. [Install Go](https://go.dev/dl/) and try again.
 
@@ -82,12 +106,12 @@ Content lives in `content/en/`. Hugo's [content organization docs](https://gohug
 
 | Channel | Link |
 |---|---|
-| Facebook Group | [Tri-Cities Meshtastic](https://www.facebook.com/groups/1096862151623739) |
+| Facebook Group | [Tri-Cities Mesh](https://www.facebook.com/groups/1096862151623739) |
 | Discord | [discord.gg/ZC9wqtxWTV](https://discord.gg/ZC9wqtxWTV) |
-| Live Coverage Map | [meshtastic.n4jhc.com](https://meshtastic.n4jhc.com/) |
+| Live Map | [map.meshcore.io](https://map.meshcore.io/) |
 
 ---
 
 ## License
 
-See [LICENSE](LICENSE). This site is not affiliated with or endorsed by the Meshtastic project.
+See [LICENSE](LICENSE). This site is not affiliated with or endorsed by the MeshCore project.

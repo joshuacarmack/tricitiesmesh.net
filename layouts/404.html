@@ -1,7 +1,10 @@
 {{ define "main" -}}
-<div class="td-content">
-  <h1>Not found</h1>
-  <p>Oops! This page doesn't exist. Try going back to the <a href="{{ "" | relURL }}">home page</a>.</p>
-  <p>You can learn how to make a 404 page like this in <a href="https://gohugo.io/templates/404/">Custom 404 Pages</a>.</p>
+<div class="td-content text-center py-5">
+  <h1>Out of range</h1>
+  <p class="lead">This page didn't make it across the mesh.</p>
+  <p>
+    <a class="btn btn-primary me-2" href="{{ "" | relURL }}">Home</a>
+    <a class="btn btn-outline-primary" href="{{ "docs/getting-started/" | relURL }}">Getting Started</a>
+  </p>
 </div>
 {{- end }}

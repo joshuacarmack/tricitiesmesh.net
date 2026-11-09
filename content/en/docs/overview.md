@@ -1,31 +1,37 @@
 ---
 title: Overview
-description: Learn what Tri-Cities Mesh is all about.
+description: What Tri-Cities Mesh is and how the network works.
 weight: 1
 ---
 
-{{% pageinfo %}}
-Welcome to Tri-Cities Mesh — an open, community-built network for the Tri-Cities area.
-{{% /pageinfo %}}
-
 ## What is Tri-Cities Mesh?
 
-Tri-Cities Mesh is a community-driven, off-grid communication network powered by **Meshtastic**.  
-Using small LoRa radios, it enables long-range, low-power messaging without needing cell towers, internet, or traditional infrastructure.
+Tri-Cities Mesh is a community-run, off-grid messaging network for **Kingsport, Johnson City, and Bristol**. It runs on **[MeshCore](https://meshcore.io)**, open-source firmware for small, low-power LoRa radios. Messages hop from radio to radio across miles of terrain, without cell towers, internet, or subscriptions.
 
-Our mission is simple: **connect people across Kingsport, Johnson City, and Bristol**—for outdoor adventures, community events, emergency preparedness, or just experimenting with mesh networking technology.
+People use it for hiking and outdoor trips, community events, emergency preparedness, and learning about radio.
+
+## How it works
+
+Radios on a MeshCore network each have a role:
+
+- **Companions** are personal radios that pair with the MeshCore app on a phone or computer. They send and receive messages but don't relay other people's traffic.
+- **Repeaters** are always-on radios at high spots. They relay messages and form the backbone of the network.
+- **Room servers** are small bulletin boards on the mesh. They hold posts for people who were offline.
+
+Because only repeaters relay traffic, the network stays quiet and reliable even as more people join.
 
 ## Why it matters
 
-- **Resilient:** Works even when cell service or internet is down.  
-- **Community-powered:** Coverage grows as more people add nodes.  
-- **Accessible:** Low-cost radios make it easy to get started.  
-- **Educational:** A hands-on way to explore wireless networking.  
+- **Resilient.** It works when the power, cell service, or internet is down.
+- **Community-powered.** Each repeater someone hosts extends coverage for everyone.
+- **Affordable.** A radio costs about $20–40 and there are no fees.
+- **Educational.** It's a hands-on way to learn about RF, antennas, and networking.
 
-It’s not meant for high-bandwidth use like streaming or calls, but it’s excellent for reliable text communication and data sharing.  
+MeshCore is built for short text messages, not voice, photos, or streaming.
 
-## What’s next?
+## What's next?
 
-- [Getting Started](/docs/getting-started/): Set up your first node.  
-- [Community](/community/): Join and connect with others.  
-- [Coverage Map](/map/): See current node locations.  
+- [Getting Started](/docs/getting-started/): set up your first radio.
+- [Coming from Meshtastic](/docs/from-meshtastic/): what changed and why.
+- [Infrastructure](/nodes/): featured repeaters around the region.
+- [Live map](https://map.meshcore.io/): see who's on the air.

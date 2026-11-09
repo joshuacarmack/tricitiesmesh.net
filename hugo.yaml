@@ -39,16 +39,19 @@ permalinks:
 # Image processing configuration.
 imaging:
   resampleFilter: CatmullRom
-  quality: 75
+  jpeg:
+    quality: 75
+  webp:
+    quality: 75
   anchor: smart
 
 # Language configuration
 languages:
   en:
-    languageName: English
+    label: English
     title: Tri-Cities Mesh
     params:
-      description: All about Meshtastic in the Tri-Cities, TN area.
+      description: MeshCore off-grid LoRa mesh for the Tri-Cities of Northeast Tennessee — Kingsport, Johnson City, and Bristol.
   # cSpell:disable
   # cSpell:enable
 
@@ -84,8 +87,8 @@ params:
 
   privacy_policy: 
 
-  # First one is picked as the Twitter card image if not set on page.
-  # images: [images/project-illustration.png]
+  # Default social share image (Open Graph / Twitter card) for every page.
+  images: [share.jpg]
 
   # Menu title if your navbar has a versions selector to access old versions of your site.
   # This menu appears only if you have at least one [params.versions] set.
@@ -128,7 +131,7 @@ params:
   prism_syntax_highlighting: false
 
   copyright:
-    authors: Tri-Cities Mesh | This site is not affiliated with or endorsed by the Meshtastic project.
+    authors: Tri-Cities Mesh | Not affiliated with or endorsed by the MeshCore project.
     from_year: 2025
 
   # User interface configuration
@@ -137,12 +140,16 @@ params:
     breadcrumb_disable: false
     # Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top navbar
     navbar_logo: true
+    # Light text on the teal navbar.
+    navbar_theme: dark
     # Set to true if you don't want the top navbar to be translucent when over a `block/cover`, like on the homepage.
     navbar_translucent_over_cover_disable: false
     # Enable to show the side bar menu in its compact state.
     sidebar_menu_compact: false
     # Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
     sidebar_search_disable: false
+    # Light/dark mode toggle in the navbar.
+    showLightDarkModeMenu: true
 
     # Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
     # This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
@@ -152,9 +159,9 @@ params:
       enable: false
       # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
       'yes': >-
-        Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.
+        Glad to hear it! Please <a href="https://github.com/joshuacarmack/tricitiesmesh.net/issues/new">tell us how we can improve</a>.
       'no': >-
-        Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.
+        Sorry to hear that. Please <a href="https://github.com/joshuacarmack/tricitiesmesh.net/issues/new">tell us how we can improve</a>.
 
     # Adds a reading time to the top of each doc.
     # If you want this feature, but occasionally need to remove the Reading time from a single page,
@@ -179,15 +186,19 @@ params:
         url: https://github.com/joshuacarmack/tricitiesmesh.net
         icon: fab fa-github
         desc: Help develop our website
-  custom_css:
-    - css/custom.css
+  # MeshCore project links used in layouts.
+  meshcore:
+    map: https://map.meshcore.io/
+    flasher: https://flasher.meshcore.io/
+    webApp: https://app.meshcore.nz/
+    docs: https://docs.meshcore.io/
 
 module:
   # Uncomment the next line to build and serve using local docsy clone declared in the named Hugo workspace:
   # workspace: docsy.work
   hugoVersion:
     extended: true
-    min: 0.146.0
+    min: 0.160.1
   imports:
-    - path: github.com/google/docsy
+    - path: github.com/docsy/docsy/theme
       disable: false

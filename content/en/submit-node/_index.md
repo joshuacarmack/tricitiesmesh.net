@@ -1,7 +1,7 @@
 ---
 title: Submit a Node
-description: Share your Meshtastic node details to help us map coverage.
-menu: { main: { weight: 30 } }
+description: Share your MeshCore repeater or fixed node to help us map coverage.
+menu: { main: { weight: 60 } }
 ---
 
 {{% blocks/lead %}}
@@ -69,13 +69,30 @@ Help us grow the mesh! Share your node’s basics below.
         <label class="form-label">Device *</label>
         <select class="form-select" name="device" required>
           <option value="" disabled selected>Choose one</option>
-          <option>LilyGO T-Echo</option>
-          <option>LilyGO T-Beam</option>
-          <option>Heltec V3</option>
-          <option>RAK Module / DIY</option>
-          <option>Other</option>
+          <option>Heltec V3 / V4</option>
+          <option>RAK WisBlock (RAK4631) / WisMesh</option>
+          <option>Seeed SenseCAP Solar Node</option>
+          <option>Seeed Wio Tracker / T1000-E</option>
+          <option>LilyGO T-Beam / T-Echo</option>
+          <option>LilyGO T-Deck / Pager</option>
+          <option>Other / DIY</option>
         </select>
         <div class="invalid-feedback">Select a device.</div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">MeshCore Role *</label>
+        <select class="form-select" name="role" required>
+          <option value="" disabled selected>Choose one</option>
+          <option>Repeater</option>
+          <option>Room Server</option>
+          <option>Companion</option>
+          <option>Sensor</option>
+        </select>
+        <div class="invalid-feedback">Select the node's role.</div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Public Key (optional)</label>
+        <input type="text" class="form-control" name="public_key" placeholder="First few bytes is fine, e.g. a1b2c3d4" maxlength="64" autocomplete="off">
       </div>
       <div class="col-md-6 mb-3">
         <label class="form-label">Power</label>

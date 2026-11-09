@@ -1,0 +1,13 @@
+{{- /* Renders the channel list from data/channels.yaml */ -}}
+<div class="tcm-grid">
+{{- range hugo.Data.channels }}
+  <div class="tcm-card">
+    <div class="tcm-icon"><i class="fas fa-{{ .icon | default "hashtag" }}"></i></div>
+    <h3>{{ .name }}</h3>
+    <p>{{ .description | markdownify }}</p>
+    {{- with .key }}
+    <div class="tcm-channel-key"><span>Key</span> <code>{{ . }}</code></div>
+    {{- end }}
+  </div>
+{{- end }}
+</div>

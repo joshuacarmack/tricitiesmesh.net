@@ -3,43 +3,24 @@ date: 2025-10-03
 title: Installing a node on Bays Mountain
 linkTitle: Bays Mountain Node
 description: >
-  Our process of installing a node on top of Bays Mountain in Kingsport, TN.
+  A year of trial and error putting a node on the Kingsport Amateur Radio Club tower atop Bays Mountain.
 author: Joshua Carmack
-resources:
-  - src: "**.{png,jpg}"
-    title: "Image #:counter"
-    params:
-      byline: "Photo: Joshua Carmack"
 ---
 
-**This is a typical blog post that includes images.**
+Bays Mountain is one of the best vantage points in the Tri-Cities, and the Kingsport Amateur Radio Club's tower up there is an obvious home for a mesh node. Getting one working has been harder than expected.
 
-The front matter specifies the date of the blog post, its title, a short description that will be displayed on the blog landing page, and its author.
+![Node on the tower](/nodes/bm/IMG_2935.jpg)
 
-## Including images
+## The short version
 
-Here's an image (`featured-sunset-get.png`) that includes a byline and a caption.
+- **July 2024.** The first node went up but wasn't working when installed.
+- **January 2025.** We brought it down and found the battery had died before install. The RAK board didn't power itself back on when the battery recovered.
+- **February 2025.** After a reset and reinstall it sent telemetry fine, but it wouldn't receive or relay messages.
+- **Summer 2025.** We tested other hardware. A node at another corner of the mountain worked fine, which pointed to RF noise at the tower site.
+- **October 2025.** We reinstalled with a new RAK node, a new enclosure, and a 900 MHz cavity filter. Next we'll try mounting it a few feet off the tower.
 
-{{< imgproc sunset Fill "600x300" >}}
-Fetch and scale an image in the upcoming Hugo 0.43.
-{{< /imgproc >}}
+The full history, with photos, is on the [Bays Mountain node page](/nodes/bm/).
 
-The front matter of this post specifies properties to be assigned to all image resources:
+## What we've learned
 
-```
-resources:
-- src: "**.{png,jpg}"
-  title: "Image #:counter"
-  params:
-    byline: "Photo: Riona MacNamara / CC-BY-CA"
-```
-
-To include the image in a page, specify its details like this:
-
-```go-html-template
-{{</* imgproc sunset Fill "600x300" */>}}
-Fetch and scale an image in the upcoming Hugo 0.43.
-{{</* /imgproc */>}}
-```
-
-The image will be rendered at the size and byline specified in the front matter.
+High sites near other transmitters are noisy. Filtering and physical separation from the other antennas matter as much as height. A board that powers itself back on after a battery recovers is worth a lot when the node is up a tower.

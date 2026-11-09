@@ -1,86 +1,99 @@
 ---
 title: Getting Started
 linkTitle: Getting Started
-description: First steps to join and use the Tri-Cities Mesh network.
+description: Get a MeshCore radio on the Tri-Cities mesh, from buying hardware to sending your first message.
 weight: 2
 ---
 
-## Join the Tri-Cities Meshtastic Network
+This guide takes you from no radio to chatting on the Tri-Cities mesh. Most people finish in under an hour.
 
-Meshtastic is a **low-power, long-range communication system** that lets you send text messages and data without cell service or Wi-Fi.  
-It’s easy to get started, and by setting up a node you’ll help expand coverage across **Kingsport, Johnson City, and Bristol**.
+{{% alert title="Coming from Meshtastic?" color="info" %}}
+MeshCore and Meshtastic can't talk to each other, even on the same hardware. Most Meshtastic radios can be reflashed with MeshCore. See [Coming from Meshtastic](/docs/from-meshtastic/) for what's different.
+{{% /alert %}}
 
-This guide will walk you through choosing the right hardware, setting up your node, and connecting to the network.
+## 1. Get a radio
 
----
+You need a LoRa radio that MeshCore supports, for the **US 915 MHz** band. Some good options:
 
-## Step 1: Get Your Hardware
+| Radio | Good for | Notes |
+|---|---|---|
+| **Heltec V3 / V4** | First radio, tinkering | Cheap, with a small screen. Needs a battery or USB power. |
+| **RAK WisMesh Pocket / Tag** (RAK4631) | Carrying with you | Very low power draw, so batteries last for days. |
+| **Seeed Wio Tracker L1 Pro / SenseCAP T1000-E** | Carrying with you | Rugged and pocket-sized, with GPS. |
+| **Seeed SenseCAP Solar Node P1 Pro** | Solar repeater | Weatherproof, with solar and battery built in. |
+| **LilyGO T-Deck Plus / T-Lora Pager** | Using without a phone | Built-in keyboard and screen. |
 
-To join the network, you’ll need a **LoRa radio device** that runs the Meshtastic firmware. Popular options include:
+The [MeshCore flasher](https://flasher.meshcore.io/) lists every supported device. If a radio isn't on the list, check before you buy.
 
-- **LilyGO T-Echo** – Small, all-in-one with built-in screen and battery. Great for portable use.  
-- **LilyGO T-Beam** – Long battery life, built-in GPS, and great for mobile or stationary use.  
-- **Heltec V3 LoRa Boards** – Compact, low-power, and great for DIY setups.  
-- **RAK Wireless Modules** – Excellent for solar-powered or high-performance relay nodes.  
+{{% alert title="Antennas matter" color="warning" %}}
+Always connect the antenna **before** powering a radio on. Transmitting without one can damage it. A better antenna usually helps range more than any setting does.
+{{% /alert %}}
 
-👉 *Where to buy:* Amazon, AliExpress, or directly from **[RAK Wireless](https://store.rakwireless.com/)**.
+## 2. Flash MeshCore
 
----
+1. Open **[flasher.meshcore.io](https://flasher.meshcore.io/)** in Chrome or Edge on a computer.
+2. Plug the radio in over USB and choose your device.
+3. Choose the firmware type:
+   - **Companion (Bluetooth)** to use your phone. This is the right choice for most people.
+   - **Companion (USB)** to use a computer.
+   - **Repeater** or **Room Server** if the radio will be a fixed, always-on site. See [Running a repeater](#running-a-repeater).
+4. Click flash and wait for it to finish.
 
-## Step 2: Flash the Meshtastic Firmware
+## 3. Install the app
 
-Your device must run the Meshtastic firmware:
+The MeshCore app runs on:
 
-1. **Use the Meshtastic Flasher** – [Flasher Tool](https://flasher.meshtastic.org/)  
-2. **Install the firmware** – Connect your device to your computer via USB and run the flasher.  
-3. **Install the app** – Download the Meshtastic app (Android, iOS, or Desktop) and connect to your device via Bluetooth or USB.  
+- **iPhone / iPad** on the [App Store](https://apps.apple.com/us/app/meshcore/id6742354151)
+- **Android** on [Google Play](https://play.google.com/store/apps/details?id=com.liamcottle.meshcore.android)
+- **Web** in Chrome at [app.meshcore.nz](https://app.meshcore.nz/)
 
----
+Pair the app with your radio over Bluetooth, or over USB for the web and desktop app.
 
-## Step 3: Configure Your Node
+## 4. Use the Tri-Cities radio settings
 
-Once your device is flashed, adjust a few settings:
+The Tri-Cities mesh uses the standard **USA/Canada (Recommended)** preset. In the app, open your radio's settings and pick that preset. To set it by hand, use these values:
 
-- **LoRa Region** → Select **US 915 MHz** (for United States).  
-- **Device Name** → Helps others recognize your node.  
-- **Channels** → Join the default chat or create a custom group channel.  
+<div class="tcm-preset">
+  <div><div class="tcm-preset-label">Frequency</div><div class="tcm-preset-value">910.525</div><div class="tcm-preset-label">MHz</div></div>
+  <div><div class="tcm-preset-label">Bandwidth</div><div class="tcm-preset-value">62.5</div><div class="tcm-preset-label">kHz</div></div>
+  <div><div class="tcm-preset-label">Spreading factor</div><div class="tcm-preset-value">7</div><div class="tcm-preset-label">SF</div></div>
+  <div><div class="tcm-preset-label">Coding rate</div><div class="tcm-preset-value">5</div><div class="tcm-preset-label">CR</div></div>
+</div>
 
----
+Frequency, bandwidth, and spreading factor **must** match the rest of the mesh, or you won't hear anyone. Radios configured over USB serial can use this command:
 
-## Step 4: Deploy Your Node
+```text
+set radio 910.525,62.5,7,5
+```
 
-Decide if your node will be **mobile** or **fixed**:
+While you're in settings:
 
-**Mobile Node (personal use)**  
-- Charge the battery or use a USB power bank.  
-- Carry your Meshtastic device in your backpack or vehicle.  
-- Communicate with other users in range!  
+- **Name**: something people will recognize, such as your callsign or first name plus town.
+- **Location**: optional. Share it if you want to show up on the [map](https://map.meshcore.io/). Use an approximate position if you'd rather not be exact.
 
-**Fixed Node (network expansion)**  
-- Place your node at **high elevation** for maximum coverage.  
-- Power with USB adapter, solar panel, or external battery.  
-- Weatherproof with an outdoor case if mounted outside.  
+## 5. Say hello
 
----
+1. **Send an advert.** This announces your radio to the mesh so others can find you.
+2. Open the **Public** channel and say hi. Tell people roughly where you are.
+3. Check your **contacts** list. Repeaters and other users show up there as their adverts reach you.
+4. To message someone directly, open their contact. Direct messages are end-to-end encrypted.
 
-## Step 5: Start Communicating!
+If you don't hear anything, you're probably out of range of a repeater for now. Try somewhere higher, near a window, or outdoors, and ask in our [Discord](/discord) for the nearest repeater.
 
-Once online, you can:
+## Running a repeater
 
-- Chat with others on the network.  
-- Send/relay messages where cell coverage doesn’t reach.  
-- Share GPS location (if enabled).  
-- Help strengthen reliability for everyone.  
+Repeaters are what make the mesh work. If you have a high spot with power and you're willing to leave a radio on 24/7, a repeater is the best thing you can add.
 
----
+- **Location beats everything.** Height and a clear view toward town matter more than radio power.
+- **Power.** USB, PoE, or solar with a battery. Solar setups need enough battery to get through a few cloudy days.
+- **Weatherproofing.** Use an outdoor enclosure, sealed cable glands, and a properly mounted external antenna.
+- **Setup.** Flash the **Repeater** firmware, then configure it over USB with the [MeshCore config tool](https://config.meshcore.io/). Set the US preset, change the **coding rate to 8** (`set radio 910.525,62.5,7,8`), give it a name, and set an **admin password**. After that you can manage it remotely from the app.
+- **Tell us about it.** [Submit your node](/submit-node/) so we can track coverage and feature it.
 
-## Want to Do More?
+Not sure where to start? Email [contact@tricitiesmesh.net](mailto:contact@tricitiesmesh.net). We're happy to help pick a site and gear.
 
-- **Host a relay** – A tower, tall building, or mountaintop node greatly boosts coverage.  
-- **Support expansion** – Donate gear, host a site, or join field testing.  
-- **Connect with us** – [Join our community](/community/) to share your setup, get help, and discuss improvements.  
+## Learn more
 
----
-
-🚀 **Ready to get started?**  
-Set up your node today and help build the **Tri-Cities Meshtastic Network**!  
+- [MeshCore documentation](https://docs.meshcore.io/)
+- [MeshCore FAQ](https://github.com/meshcore-dev/MeshCore/blob/main/docs/faq.md)
+- [Our community](/community/): Discord and Facebook for local help

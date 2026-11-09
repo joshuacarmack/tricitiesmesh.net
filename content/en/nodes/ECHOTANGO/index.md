@@ -1,18 +1,18 @@
 ---
 title: Echo Tango
-description: 
+description: Indoor node in Kingsport, in a window facing Bays Mountain.
 date: 2025-04-13T10:55:00.000Z
-lora:
-  shortName: ET
-  longName: Echo Tango
-  mode: CLIENT
-  nodeNumber: 0
-  meshtasticId: ""
-  mqtt: None
+weight: 30
+meshcore:
+  name: Echo Tango
+  role: ""              # Companion | Repeater | Room Server | Sensor
+  publicKey: ""
+  hardware: LilyGO T-Beam
+  status: Migrating
 contact:
   name: Erik McCord
   amateurCallsign: WX4ET
-  meshtasticName: WX4ET
+  meshcoreName: WX4ET
   email: wx4et@outlook.com
   discord: 
 location:

@@ -1,17 +1,17 @@
 ---
 title: Bays Mountain
 description: Node on Kingsport Amateur Radio Club's tower atop Bays Mountain
-lora:
-  shortName: BM
-  longName: Bays Mountain 1
-  mode: CLIENT
-  nodeNumber: 2573552954
-  meshtasticId: '!99654d3a'
-  mqtt: Indirect
+weight: 10
+meshcore:
+  name: Bays Mountain 1
+  role: Repeater        # Companion | Repeater | Room Server | Sensor
+  publicKey: ""         # MeshCore public key (or its first few bytes)
+  hardware: RAK4631 with 900 MHz cavity filter
+  status: Migrating     # Active | Migrating | Offline
 contact:
   name: Joshua Carmack / Kingsport Amateur Radio Club
   amateurCallsign: N4JHC
-  meshtasticName: 
+  meshcoreName: 
   email: n4jhc@w4trc.org
   discord: 
 location:
@@ -23,6 +23,10 @@ location:
 ---
 
 Part of the Kingsport Amateur Radio Club repeater site.
+
+{{% alert title="MeshCore migration" color="info" %}}
+This site is being converted from Meshtastic to a MeshCore repeater. The history below covers the Meshtastic installs.
+{{% /alert %}}
 
 ## Current Iteration (as of 10/6/2025)
 

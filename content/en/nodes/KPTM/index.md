@@ -2,17 +2,17 @@
 title: Kingsport Monitor
 description: Powered node in Kingsport, used for mapping and telemetry keeping.
 date: 2025-04-13T10:55:00.000Z
-lora:
-  shortName: KPTM
-  longName: Kingsport Monitor
-  mode: CLIENT_HIDDEN
-  nodeNumber: 0
-  meshtasticId: "!34078216"
-  mqtt: Direct
+weight: 20
+meshcore:
+  name: Kingsport Monitor
+  role: ""              # Companion | Repeater | Room Server | Sensor
+  publicKey: ""
+  hardware: Heltec V3
+  status: Migrating
 contact:
   name: Joshua Carmack
   amateurCallsign: N4JHC
-  meshtasticName: N4JHC
+  meshcoreName: N4JHC
   email: n4jhcradio@gmail.com
   discord: 
 location:
@@ -24,7 +24,9 @@ location:
 ---
 Maintained by Joshua Carmack. Used for mapping purposes, runs this site plus multiple telemetry monitors.
 
-View some of the telemetry at [https://tricitiesmesh.net/map](https://tricitiesmesh.net/map). This shows a live view of any node that can be heard from downtown Kingsport.
+{{% alert title="MeshCore migration" color="info" %}}
+This node is being converted to MeshCore. The software section below describes the original Meshtastic setup.
+{{% /alert %}}
 
 ## Node Setup
 
@@ -32,7 +34,7 @@ The node is a Heltec V3 that is on a pole on my roof. It is powered with a PoE s
 
 ![Node testing](fa442070-7582-43b5-9d7d-036e0115e343.jpg)
 
-## Software
+## Software (Meshtastic era)
 
 For the software portion, I have a Windows virtual machine running on my home server that has [MeshSense by Affirmatech](https://affirmatech.com/meshsense) installed. The node is connected to my Wi-Fi so the server is able to connect to it that way. I can then expose this software through my reverse proxy so anyone can visit [https://meshtastic.n4jhc.com/](https://meshtastic.n4jhc.com/) and view the interface of the application.
 
